@@ -5,3 +5,23 @@ def is_ten(x):
     if x != 10:
             return(False)
 print(is_ten(10))
+
+#Beginner Booleans
+def triple_and(a, b, c):
+     return(a and b and c)
+print(triple_and(True, False, True))
+
+#Beginner Casting
+def x(str):
+    a = int(str)
+    b = a + 3
+    return(b)
+print(x("0"))
+
+#Beginner Booleans 2
+def test_or_long(x):
+    if x == "test" or len(x) == 6:
+        return(True)
+    if x != "test" or len(x) != 6:
+        return(False)
+print(test_or_long("test"))
