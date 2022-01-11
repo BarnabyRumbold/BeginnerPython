@@ -33,3 +33,10 @@ def make_day_string(x):
     day = int(x)
     return("it is day " + str(x) + " of the month")
 print(make_day_string(3))
+
+#Beginnner Comparisons
+def is_young(age):
+    if age < 18:
+        return(True)
+    elif age >= 18:
+        return(False)
