@@ -1,4 +1,6 @@
-#Beginner Functions
+#Beginner Functions:
+
+#Equals Function
 def is_ten(x):
     if x == 10:
         return(True)
@@ -25,3 +27,9 @@ def test_or_long(x):
     if x != "test" or len(x) != 6:
         return(False)
 print(test_or_long("test"))
+
+#Beginner Casting 2
+def make_day_string(x):
+    day = int(x)
+    return("it is day " + str(x) + " of the month")
+print(make_day_string(3))
