@@ -1,0 +1,7 @@
+#Beginner Functions
+def is_ten(x):
+    if x == 10:
+        return(True)
+    if x != 10:
+            return(False)
+print(is_ten(10))
