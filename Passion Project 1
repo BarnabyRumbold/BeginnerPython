@@ -1,0 +1,64 @@
+# Import appropriate libraries
+import pandas as pd # read CSV/data processing
+import numpy as np # linear algebra
+import seaborn as sns # visualisation tool
+import matplotlib.pyplot as plt # visualisation tool
+
+
+# Get access to the data
+path = ("world-happiness-report.csv")
+data = pd.read_csv(path, header=0)
+print(data.head(10))
+
+# Lets have a look at the data!
+
+data.describe
+data.shape
+
+## 11 columns, 1949 rows ##
+
+# View the data columns 
+
+data.columns
+
+# What is the highest life expectancy at birth?
+
+column =data["Healthy life expectancy at birth"]
+max_value = column.max()
+print(max_value)
+
+
+## Which country does this belong to?
+filtered_data = data[data["Healthy life expectancy at birth"]==77.1]
+print(filtered_data)
+
+
+# Lets have a look at correlations
+correlations = data.corr()
+print(data.corr)
+
+# Lets have a look at correlations graphically so it is easier to understand
+
+sns.heatmap(correlations, cmap='coolwarm') 
+
+# This more easily demonstrates the correlation between variables, like life expectancy and GDP per capita
+
+# Lets explore correlation between some specific variables like GDP per capita and generosity
+data.plot(kind='scatter',x='Log GDP per capita',y='Generosity',alpha=0.5,color='blue')
+plt.xlabel = 'Log GDP per capita'
+plt.ylabel = 'Generosity'
+plt.show()
+
+# And how about generosity and freedom to make life choices?
+data.plot(kind='scatter',x='Freedom to make life choices',y='Generosity',alpha=0.5,color='blue')
+plt.xlabel = 'Freedom to make life choices'
+plt.ylabel = 'Generosity'
+plt.show()
+
+
+# Finally what about generosity and perceptions of corruption?
+data.plot(kind='scatter',x='Perceptions of corruption',y='Generosity',alpha=0.5,color='blue')
+plt.xlabel = 'Perceptions of corruption'
+plt.ylabel = 'Generosity'
+plt.show()
+
