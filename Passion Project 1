@@ -48,6 +48,7 @@ data.plot(kind='scatter',x='Log GDP per capita',y='Generosity',alpha=0.5,color='
 plt.xlabel = 'Log GDP per capita'
 plt.ylabel = 'Generosity'
 plt.show()
+# interesting that there is limited correlation between how much money people have and their generosity!
 
 # And how about generosity and freedom to make life choices?
 data.plot(kind='scatter',x='Freedom to make life choices',y='Generosity',alpha=0.5,color='blue')
@@ -61,4 +62,5 @@ data.plot(kind='scatter',x='Perceptions of corruption',y='Generosity',alpha=0.5,
 plt.xlabel = 'Perceptions of corruption'
 plt.ylabel = 'Generosity'
 plt.show()
+
 
