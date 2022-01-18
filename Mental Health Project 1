@@ -1,0 +1,34 @@
+import pandas as pd
+path = ("/SuicideRates.csv")
+data = pd.read_csv(path, header=0)
+print(data.head(10))
+
+data.info()
+
+# understand how the age variable is partitioned 
+data.iloc[:10, :4]
+
+# create a date frame
+df = pd.DataFrame(data, columns=['year', 'suicides_no', 'country', 'age', 'sex'])
+print(df)
+
+
+# partition rows to only include ages 25-34
+df = df.loc[df['age'] == '25-34 years']
+
+# focus on women
+df = df.loc[df['sex'] == 'female']
+
+# focus on Germany
+new_df = df[df['country'] == 'Germany']
+print(new_df)
+
+# look at correlation between year and number of suicides
+column_1 = new_df["year"]
+column_2 = new_df["suicides_no"]
+correlation = column_1. corr(column_2)
+print(correlation)
+
+# visualise this correlation over time
+import seaborn as sns
+sns.scatterplot(data=new_df, x="year", y="suicides_no")
